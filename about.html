@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lunar Emporium · About Us | Our Cosmic Story</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fefcf5;
+      color: #1a1e2b;
+      line-height: 1.5;
+    }
+
+    /* Lunar Emporium theme (consistent with all pages) */
+    :root {
+      --lunar-deep: #0f172a;
+      --lunar-glow: #e2b714;
+      --lunar-mist: #f8f6f0;
+      --lunar-crater: #334155;
+      --lunar-silver: #eef2ff;
+      --aurora-teal: #14b8a6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header */
+    .site-header {
+      background: #ffffff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid #e9e9ef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      font-size: 32px;
+      color: var(--lunar-glow);
+      filter: drop-shadow(0 0 4px rgba(226, 183, 20, 0.3));
+    }
+
+    .logo-text {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #0f172a 0%, #2d3a5e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-sub {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--lunar-crater);
+      margin-left: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--lunar-glow);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+    }
+
+    .header-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+      color: #334155;
+    }
+
+    .header-icons i:hover {
+      color: var(--lunar-glow);
+    }
+
+    /* about hero */
+    .about-hero {
+      background: linear-gradient(115deg, #f1f3f9 0%, #ffffff 100%);
+      border-radius: 32px;
+      margin: 32px 0 40px;
+      padding: 56px 48px;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      background: linear-gradient(to right, #0a0f1f, #2d3a5e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .about-hero p {
+      color: #475569;
+      font-size: 18px;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .moon-badge {
+      display: inline-block;
+      background: #e9e4ff;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 24px;
+      color: #5b3cc4;
+    }
+
+    /* story & mission sections */
+    .story-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      margin: 60px 0;
+    }
+
+    .story-text {
+      flex: 1.2;
+    }
+
+    .story-text h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .story-text h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: var(--lunar-glow);
+      border-radius: 4px;
+    }
+
+    .story-text p {
+      margin: 24px 0 16px;
+      color: #334155;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .story-image {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .story-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* mission grid */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 50px 0;
+    }
+
+    .mission-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 28px;
+      text-align: center;
+      transition: 0.25s;
+      border: 1px solid #f0ecdf;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .mission-card:hover {
+      transform: translateY(-6px);
+      border-color: #ffe2aa;
+      box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    .mission-icon {
+      font-size: 48px;
+      color: var(--lunar-glow);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .mission-card p {
+      color: #475569;
+    }
+
+    /* team section */
+    .team-section {
+      margin: 70px 0 50px;
+    }
+
+    .team-section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .team-sub {
+      text-align: center;
+      color: #5b6e8c;
+      margin-bottom: 48px;
+      font-size: 18px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .team-card {
+      text-align: center;
+      background: white;
+      border-radius: 32px;
+      padding: 28px 20px 32px;
+      transition: 0.2s;
+    }
+
+    .team-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 3px solid var(--lunar-glow);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .team-card h4 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .team-role {
+      color: #e2b714;
+      font-weight: 600;
+      margin: 8px 0 12px;
+    }
+
+    /* values + highlight */
+    .values-banner {
+      background: #0f172a;
+      border-radius: 40px;
+      padding: 56px 48px;
+      margin: 60px 0 40px;
+      color: white;
+      text-align: center;
+    }
+
+    .values-banner h3 {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+
+    .values-banner p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--lunar-glow);
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 16px;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background: var(--lunar-glow);
+      color: #0f172a;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid #eef2f0;
+      padding: 48px 0 32px;
+      background: #ffffff;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #475569;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+      transition: 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--lunar-glow);
+    }
+
+    .social-icons i {
+      font-size: 24px;
+      margin-right: 18px;
+      color: #334155;
+      transition: 0.2s;
+    }
+
+    .social-icons i:hover {
+      color: var(--lunar-glow);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 28px;
+      color: #6c7289;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 20px;
+      }
+      .about-hero {
+        padding: 36px 24px;
+      }
+      .about-hero h1 {
+        font-size: 38px;
+      }
+      .story-section {
+        flex-direction: column;
+      }
+      .nav-links {
+        display: none;
+      }
+      .header-inner {
+        justify-content: space-between;
+      }
+      .values-banner {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo-area" style="text-decoration: none;">
+      <i class="fas fa-moon logo-icon"></i>
+      <div>
+        <span class="logo-text">Lunar Emporium</span>
+        <span class="logo-sub">✦ celestial goods</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="header-icons">
+      <i class="far fa-heart"></i>
+      <i class="far fa-user"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- About Hero Section -->
+    <div class="about-hero">
+      <h1>🌙 We are Lunar Emporium</h1>
+      <p>Born under a full moon and guided by starlight, we craft celestial treasures for those who find wonder in the cosmos. Our journey began with a simple belief: everyday objects should feel magical.</p>
+      <div class="moon-badge"><i class="fas fa-sparkle"></i> est. under the eclipse of 2021</div>
+    </div>
+
+    <!-- Our Story Section with unique image -->
+    <div class="story-section">
+      <div class="story-text">
+        <h2>Our cosmic origin</h2>
+        <p>Lunar Emporium was founded by selenophile and designer <strong>Elara Voss</strong> after she spent a transformative year traveling under moonlit skies. Frustrated by mass-produced decor that lacked soul, she began hand-selecting ethically crafted artifacts — from meteorite-inspired jewelry to lunar-phase clocks — each piece telling a story of the night sky.</p>
+        <p>What started as a small Etsy shop has grown into a global community of dreamers, stargazers, and conscious consumers. Today, we partner with artisans across the globe who share our commitment to sustainable materials, fair wages, and celestial artistry.</p>
+        <p>Every product at Lunar Emporium is a small tribute to the moon’s quiet power — a reminder to pause, look up, and embrace the mystery.</p>
+      </div>
+      <div class="story-image">
+        <img src="https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Founder Elara Voss working with lunar-inspired designs" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Mission & values cards -->
+    <div>
+      <h2 style="font-size: 32px; margin-bottom: 24px; text-align: center;">Our guiding light</h2>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h3>Ethical Craftsmanship</h3>
+          <p>We partner with small-batch artisans and ensure fair wages, sustainable materials, and minimal waste. Every piece is made with respect for people and planet.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-feather-alt"></i></div>
+          <h3>Curated Wonder</h3>
+          <p>From moon-phase planners to selenite towers, our collection is thoughtfully chosen to spark joy, curiosity, and cosmic connection.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Earth-Conscious Orbit</h3>
+          <p>We use recycled packaging, carbon-neutral shipping, and donate 1% of profits to dark-sky preservation initiatives.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meet the team (unique names) -->
+    <div class="team-section">
+      <h2>✦ The celestial crew ✦</h2>
+      <div class="team-sub">Visionaries, creators, and moon-chasers</div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img class="team-img" src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Elara Voss - Founder" loading="lazy">
+          <h4>Elara Voss</h4>
+          <div class="team-role">Founder & Creative Director</div>
+          <p style="color: #5b6e8c; font-size: 14px;">Obsessed with lunar cycles and vintage astrolabes.</p>
+        </div>
+        <div class="team-card">
+          <img class="team-img" src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Marcus Yin - Head Curator" loading="lazy">
+          <h4>Marcus Yin</h4>
+          <div class="team-role">Head Curator</div>
+          <p style="color: #5b6e8c; font-size: 14px;">Finds hidden gems from Marrakech to Kyoto.</p>
+        </div>
+        <div class="team-card">
+          <img class="team-img" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Sofia Rivera - Stellar Support" loading="lazy">
+          <h4>Sofia Rivera</h4>
+          <div class="team-role">Stellar Support Lead</div>
+          <p style="color: #5b6e8c; font-size: 14px;">Ensures your cosmic journey is seamless.</p>
+        </div>
+        <div class="team-card">
+          <img class="team-img" src="https://images.pexels.com/photos/2380794/pexels-photo-2380794.jpeg?auto=compress&cs=tinysrgb&w=300" alt="James Carter - Sustainability" loading="lazy">
+          <h4>James Carter</h4>
+          <div class="team-role">Sustainability Officer</div>
+          <p style="color: #5b6e8c; font-size: 14px;">Keeps our orbit eco-friendly and transparent.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- values banner / join the journey -->
+    <div class="values-banner">
+      <h3><i class="fas fa-moon"></i> Join our lunar family</h3>
+      <p>We’re more than a store — we’re a community of moon lovers. Follow us for daily celestial inspiration, early access to new drops, and stories from fellow stargazers.</p>
+      <button class="btn-secondary" id="newsletterRedirect">Sign up for moon letters →</button>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-moon"></i> Lunar Emporium</h4>
+        <p>Curated cosmic finds for modern mystics.</p>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-pinterest"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 Lunar Emporium — made with moonlight and wonder. 🌙✨
+    </div>
+  </div>
+</footer>
+
+<script>
+  // interactive demo: newsletter redirect alert + header icon feedback (non-intrusive)
+  const signupBtn = document.getElementById('newsletterRedirect');
+  if (signupBtn) {
+    signupBtn.addEventListener('click', () => {
+      alert("🌙 Welcome to our orbit! You'll receive lunar updates and mystical offers soon.");
+    });
+  }
+
+  // header icon clicks
+  document.querySelectorAll('.header-icons i').forEach(icon => {
+    icon.addEventListener('click', () => {
+      console.log('Lunar Emporium: icon interaction (demo)');
+    });
+  });
+
+  // footer & nav links demo (keep smooth)
+  document.querySelectorAll('.footer-col a, .nav-links a, .logo-area').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (link.getAttribute('href') === '#') {
+        e.preventDefault();
+        // placeholder navigation, in real store would route to pages
+      }
+    });
+  });
+</script>
+</body>
+</html>

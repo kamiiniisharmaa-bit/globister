@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lunar Emporium · Privacy Policy | Cosmic Confidentiality</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fefcf5;
+      color: #1a1e2b;
+      line-height: 1.5;
+    }
+
+    /* Lunar Emporium theme (consistent with homepage and terms) */
+    :root {
+      --lunar-deep: #0f172a;
+      --lunar-glow: #e2b714;
+      --lunar-mist: #f8f6f0;
+      --lunar-crater: #334155;
+      --lunar-silver: #eef2ff;
+      --aurora-teal: #14b8a6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header same as ecom site */
+    .site-header {
+      background: #ffffff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid #e9e9ef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-icon {
+      font-size: 32px;
+      color: var(--lunar-glow);
+      filter: drop-shadow(0 0 4px rgba(226, 183, 20, 0.3));
+    }
+
+    .logo-text {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #0f172a 0%, #2d3a5e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-sub {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--lunar-crater);
+      margin-left: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--lunar-glow);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+    }
+
+    .header-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+      color: #334155;
+    }
+
+    .header-icons i:hover {
+      color: var(--lunar-glow);
+    }
+
+    /* privacy hero */
+    .privacy-hero {
+      background: linear-gradient(115deg, #f1f3f9 0%, #ffffff 100%);
+      border-radius: 32px;
+      margin: 32px 0 40px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .privacy-hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(to right, #0a0f1f, #2d3a5e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero p {
+      color: #475569;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .last-updated {
+      display: inline-block;
+      background: #e9e4ff;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    /* privacy content card */
+    .privacy-card {
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+      padding: 48px 56px;
+      margin: 30px 0 70px;
+      border: 1px solid #f0ecdf;
+    }
+
+    .privacy-section {
+      margin-bottom: 42px;
+    }
+
+    .privacy-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #0f172a;
+    }
+
+    .privacy-section h2 i {
+      color: var(--lunar-glow);
+      font-size: 26px;
+    }
+
+    .privacy-section h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 24px 0 12px 0;
+      color: #1e293b;
+    }
+
+    .privacy-section p {
+      margin-bottom: 16px;
+      color: #334155;
+    }
+
+    .privacy-section ul, .privacy-section ol {
+      margin: 12px 0 20px 28px;
+      color: #334155;
+    }
+
+    .privacy-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fefaf0;
+      border-left: 4px solid var(--lunar-glow);
+      padding: 20px 28px;
+      border-radius: 24px;
+      margin: 28px 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #faf9fe;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .data-table th, .data-table td {
+      border: 1px solid #e5e7eb;
+      padding: 14px 18px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    hr {
+      margin: 32px 0;
+      border: none;
+      height: 1px;
+      background: #e9e9ef;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid #eef2f0;
+      padding: 48px 0 32px;
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #475569;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+      transition: 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--lunar-glow);
+    }
+
+    .social-icons i {
+      font-size: 24px;
+      margin-right: 18px;
+      color: #334155;
+      transition: 0.2s;
+    }
+
+    .social-icons i:hover {
+      color: var(--lunar-glow);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 28px;
+      color: #6c7289;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 20px;
+      }
+      .privacy-card {
+        padding: 28px 24px;
+      }
+      .privacy-hero {
+        padding: 32px 20px;
+      }
+      .privacy-hero h1 {
+        font-size: 36px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .header-inner {
+        justify-content: space-between;
+      }
+      .data-table th, .data-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#" class="logo-area" style="text-decoration: none;">
+      <i class="fas fa-moon logo-icon"></i>
+      <div>
+        <span class="logo-text">Lunar Emporium</span>
+        <span class="logo-sub">✦ celestial goods</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="header-icons">
+      <i class="far fa-heart"></i>
+      <i class="far fa-user"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Privacy Policy hero -->
+    <div class="privacy-hero">
+      <h1>🌙 Privacy Policy</h1>
+      <p>Your data is as precious as moonlight. We honor your privacy with transparency, security, and cosmic respect.</p>
+      <div class="last-updated"><i class="far fa-calendar-alt"></i> Effective date: June 12, 2026</div>
+    </div>
+
+    <!-- Main Privacy Content -->
+    <div class="privacy-card">
+      <div class="privacy-section">
+        <h2><i class="fas fa-shield-heart"></i> 1. Our Celestial Commitment</h2>
+        <p>At Lunar Emporium ("we", "us", "our"), we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit our website, make a purchase, or interact with our cosmic community. We follow industry best practices and applicable privacy laws (including GDPR and CCPA where relevant) to ensure your journey with us remains secure.</p>
+        <p>By using Lunar Emporium, you consent to the practices described in this policy. If you have any questions, our Stellar Support team is always ready to help.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+        <p>To provide you with a magical shopping experience, we collect certain types of information:</p>
+        <h3><i class="fas fa-user-circle"></i> Personal Information You Provide</h3>
+        <ul>
+          <li><strong>Identity Data:</strong> Name, email address, postal address, phone number, date of birth (for age verification on certain products).</li>
+          <li><strong>Payment Data:</strong> Credit/debit card details, billing address, and transaction history (processed securely via PCI-compliant partners).</li>
+          <li><strong>Account Credentials:</strong> Username, password, and preferences when you create a Lunar Emporium account.</li>
+          <li><strong>Communications:</strong> Any messages, reviews, or feedback you send to us.</li>
+        </ul>
+        <h3><i class="fas fa-chart-line"></i> Automatically Collected Information</h3>
+        <ul>
+          <li><strong>Device & Usage Data:</strong> IP address, browser type, operating system, referring URLs, pages viewed, and timestamps.</li>
+          <li><strong>Cookies & Tracking:</strong> We use cookies, web beacons, and similar technologies to remember your preferences and analyze site traffic. (See Section 7 for more details.)</li>
+        </ul>
+        <div class="highlight-box">
+          <i class="fas fa-star-of-life" style="color: #e2b714; margin-right: 8px;"></i> <strong>Moonlit Transparency:</strong> We never sell your personal information to third parties. Your data stays within the Lunar Emporium orbit.
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-chart-simple"></i> 3. How We Use Your Information</h2>
+        <p>We use your personal data for legitimate business purposes, including:</p>
+        <ul>
+          <li><i class="fas fa-check-circle" style="color: #14b8a6; margin-right: 8px;"></i> Processing and fulfilling your orders (payment, shipping, returns).</li>
+          <li><i class="fas fa-check-circle" style="color: #14b8a6; margin-right: 8px;"></i> Sending order confirmations, shipping updates, and customer support messages.</li>
+          <li><i class="fas fa-check-circle" style="color: #14b8a6; margin-right: 8px;"></i> Personalizing your shopping experience and recommending lunar goods you might love.</li>
+          <li><i class="fas fa-check-circle" style="color: #14b8a6; margin-right: 8px;"></i> Improving our website, products, and services through analytics and feedback.</li>
+          <li><i class="fas fa-check-circle" style="color: #14b8a6; margin-right: 8px;"></i> Sending promotional emails, newsletters, and lunar drop alerts (you can opt out anytime).</li>
+          <li><i class="fas fa-check-circle" style="color: #14b8a6; margin-right: 8px;"></i> Detecting and preventing fraud, security incidents, or other prohibited activities.</li>
+        </ul>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-handshake"></i> 4. Sharing & Disclosure</h2>
+        <p>We only share your information with trusted partners who help us operate our business, under strict confidentiality agreements:</p>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category of Recipient</th><th>Purpose</th><th>Example</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Service Providers</td><td>Payment processing, order fulfillment, email delivery, analytics</td><td>Stripe, Shopify, USPS, Klaviyo</td></tr>
+            <tr><td>Legal & Compliance</td><td>To comply with laws, enforce our Terms, or protect rights</td><td>Courts, law enforcement, regulators</td></tr>
+            <tr><td>Business Transfers</td><td>In case of merger, acquisition, or sale of assets (with notice)</td><td>Future celestial partnerships</td></tr>
+          </tbody>
+        </table>
+        <p>We do not rent, sell, or trade your personal information for marketing purposes unrelated to Lunar Emporium.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-cookie-bite"></i> 5. Cookies & Tracking Technologies</h2>
+        <p>Lunar Emporium uses cookies to enhance your browsing experience. Cookies are small text files stored on your device. We use:</p>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for site functionality (shopping cart, login).</li>
+          <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our site (e.g., Google Analytics).</li>
+          <li><strong>Functional Cookies:</strong> Remember your preferences like language and region.</li>
+          <li><strong>Targeting Cookies:</strong> Limited use for retargeting campaigns (you can opt out via your browser settings).</li>
+        </ul>
+        <p>You can manage cookie preferences through your browser settings. However, disabling certain cookies may affect site features. For more details, see our Cookie Preference Center (available in footer).</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-user-shield"></i> 6. Data Security & Retention</h2>
+        <p>We implement industry-standard security measures to protect your personal information, including SSL encryption, firewalls, restricted access, and regular security audits. Despite our efforts, no method of transmission over the Internet is 100% secure. We retain your data only as long as necessary to fulfill the purposes outlined in this policy, or as required by law (e.g., tax records for 7 years).</p>
+        <div class="highlight-box">
+          <i class="fas fa-lock"></i> <strong>Your Account Security:</strong> You are responsible for keeping your password confidential. Enable two-factor authentication if available, and always log out after using shared devices.
+        </div>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-globe-americas"></i> 7. Your Privacy Rights</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access & Portability:</strong> Request a copy of the data we hold about you.</li>
+          <li><strong>Correction:</strong> Update inaccurate or incomplete information.</li>
+          <li><strong>Deletion ("Right to be Forgotten"):</strong> Request deletion of your personal data, subject to legal exceptions.</li>
+          <li><strong>Opt-Out of Marketing:</strong> Click "unsubscribe" in any email or adjust account preferences.</li>
+          <li><strong>Restrict Processing:</strong> Limit how we use your data in certain circumstances.</li>
+        </ul>
+        <p>To exercise these rights, please contact us at <strong>privacy@lunaremporium.com</strong>. We will respond within 30 days. We will never discriminate against you for exercising your privacy rights.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-child"></i> 8. Children's Privacy</h2>
+        <p>Lunar Emporium does not knowingly collect personal information from children under the age of 13. If you are a parent or guardian and believe your child has provided us with data, please contact us immediately. We will take steps to delete such information.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-envelope-open-text"></i> 9. Third-Party Links</h2>
+        <p>Our site may contain links to other websites (e.g., social media platforms, payment gateways). This Privacy Policy does not apply to those third-party sites. We encourage you to read their privacy policies before providing any personal information.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-bell"></i> 10. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of material changes by posting the new policy on this page and updating the "Effective date" at the top. Your continued use of Lunar Emporium after such changes constitutes acceptance of the revised policy.</p>
+      </div>
+
+      <div class="privacy-section">
+        <h2><i class="fas fa-address-card"></i> 11. Contact Our Stellar Privacy Team</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please reach out:</p>
+        <p><i class="fas fa-envelope" style="color: #e2b714; width: 24px;"></i> <strong>privacy@lunaremporium.com</strong><br>
+        <i class="fas fa-map-pin"></i> Lunar Emporium Privacy Office — 777 Celestial Way, Suite 42, San Francisco, CA 94107<br>
+        <i class="fas fa-phone-alt"></i> +1 (555) 872-3421 (Mon-Fri, 9am–5pm PST)<br>
+        <i class="fas fa-comment"></i> Live chat available on our website.</p>
+      </div>
+
+      <hr>
+      <p style="text-align: center; color: #5b6e8c; font-size: 14px;">✨ Your trust is the cornerstone of our universe. Thank you for being part of the Lunar Emporium community. ✨</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-moon"></i> Lunar Emporium</h4>
+        <p>Curated cosmic finds for modern mystics.</p>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-pinterest"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 Lunar Emporium — all celestial rights reserved. 🌙
+    </div>
+  </div>
+</footer>
+
+<!-- simple interactions for demo -->
+<script>
+  // subtle interactive feedback for header icons and demo purposes
+  const headerIcons = document.querySelectorAll('.header-icons i');
+  headerIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      // just a friendly console log to mimic interaction, no invasive alerts
+      console.log('Lunar Emporium: you clicked a header icon (demo interaction)');
+    });
+  });
+
+  // footer legal links (prevent default for # placeholders only to keep demo clean)
+  document.querySelectorAll('.footer-col a, .nav-links a, .logo-area').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (link.getAttribute('href') === '#') {
+        e.preventDefault();
+        // In a real store, these would navigate to actual pages
+      }
+    });
+  });
+</script>
+</body>
+</html>

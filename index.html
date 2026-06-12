@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Lunar Emporium | Celestial Finds</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fefcf5;
+      color: #1a1e2b;
+      scroll-behavior: smooth;
+    }
+
+    /* Unique name: Lunar Emporium — celestial, moon-inspired palette */
+    :root {
+      --lunar-deep: #0f172a;
+      --lunar-glow: #e2b714;
+      --lunar-mist: #f8f6f0;
+      --lunar-crater: #334155;
+      --lunar-silver: #eef2ff;
+      --aurora-teal: #14b8a6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header styles */
+    .site-header {
+      background: #ffffff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid #e9e9ef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      font-size: 32px;
+      color: var(--lunar-glow);
+      filter: drop-shadow(0 0 4px rgba(226, 183, 20, 0.3));
+    }
+
+    .logo-text {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #0f172a 0%, #2d3a5e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo-sub {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--lunar-crater);
+      margin-left: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e293b;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--lunar-glow);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+    }
+
+    .header-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+      color: #334155;
+    }
+
+    .header-icons i:hover {
+      color: var(--lunar-glow);
+    }
+
+    /* hero section with high-quality image (placeholder but unique) */
+    .hero {
+      margin: 40px 0 60px;
+      border-radius: 48px;
+      background: linear-gradient(115deg, #f1f3f9 0%, #ffffff 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .hero-content {
+      flex: 1.2;
+      padding: 48px 0 48px 48px;
+    }
+
+    .hero-badge {
+      background: #e9e4ff;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 60px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #5b3cc4;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      background: linear-gradient(to right, #0a0f1f, #2d3a5e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      color: #475569;
+      max-width: 90%;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      background: #0f172a;
+      border: none;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .cta-button:hover {
+      background: #e2b714;
+      color: #0f172a;
+      transform: scale(1.02);
+    }
+
+    .hero-image {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.01);
+    }
+
+    /* featured categories */
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 56px 0 24px 0;
+      letter-spacing: -0.3px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--lunar-glow);
+      border-radius: 4px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin: 30px 0 40px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.3s;
+      box-shadow: var(--card-shadow);
+      border: 1px solid #f0f0f0;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 40px -16px rgba(0, 0, 0, 0.12);
+    }
+
+    .category-img {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .category-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .category-card:hover .category-img img {
+      transform: scale(1.05);
+    }
+
+    .category-info {
+      padding: 20px 20px 24px;
+    }
+
+    .category-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .category-info p {
+      color: #5b6e8c;
+      font-weight: 500;
+    }
+
+    /* featured products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      margin: 30px 0 50px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 28px;
+      padding: 20px 20px 24px;
+      transition: 0.25s;
+      border: 1px solid #eceef5;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: #ffe2aa;
+      box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-img {
+      background: #f8f9ff;
+      border-radius: 24px;
+      text-align: center;
+      padding: 24px 0;
+      margin-bottom: 18px;
+    }
+
+    .product-img img {
+      max-width: 100%;
+      max-height: 180px;
+      object-fit: contain;
+    }
+
+    .product-title {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .price {
+      font-weight: 800;
+      font-size: 22px;
+      color: #0f172a;
+    }
+
+    .add-to-cart {
+      background: none;
+      border: 1.5px solid #d4dcec;
+      border-radius: 40px;
+      padding: 8px 14px;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: pointer;
+      background: white;
+    }
+
+    .add-to-cart i {
+      margin-right: 8px;
+      color: #e2b714;
+    }
+
+    .add-to-cart:hover {
+      background: #0f172a;
+      color: white;
+      border-color: #0f172a;
+    }
+
+    /* testimonial unique section */
+    .testimonial-section {
+      background: #fefaf0;
+      border-radius: 48px;
+      margin: 70px 0;
+      padding: 56px 40px;
+    }
+
+    .testimonial-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .testimonial-text {
+      flex: 1;
+    }
+
+    .testimonial-text i {
+      font-size: 48px;
+      color: #e2b714;
+      opacity: 0.7;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .quote {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    .customer-name {
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    .testimonial-img {
+      flex: 0.7;
+    }
+
+    .testimonial-img img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* newsletter */
+    .newsletter {
+      background: #0f172a;
+      border-radius: 40px;
+      padding: 56px 48px;
+      margin: 50px 0 70px;
+      color: white;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .newsletter p {
+      margin-bottom: 28px;
+      opacity: 0.8;
+    }
+
+    .news-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .news-form input {
+      padding: 16px 24px;
+      border-radius: 70px;
+      border: none;
+      width: 300px;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    .news-form button {
+      background: #e2b714;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 70px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 1px solid #eef2f0;
+      padding: 48px 0 32px;
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #475569;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 12px;
+      transition: 0.2s;
+    }
+
+    .social-icons i {
+      font-size: 24px;
+      margin-right: 18px;
+      color: #334155;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 28px;
+      color: #6c7289;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 20px;
+      }
+      .hero-content h1 {
+        font-size: 40px;
+      }
+      .hero-content {
+        padding: 28px;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+      .testimonial-flex {
+        flex-direction: column;
+      }
+      .newsletter {
+        padding: 36px 24px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .header-inner {
+        justify-content: space-between;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-area">
+      <i class="fas fa-moon logo-icon"></i>
+      <div>
+        <span class="logo-text">Lunar Emporium</span>
+        <span class="logo-sub">✦ celestial goods</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="header-icons">
+      <i class="far fa-heart"></i>
+      <i class="far fa-user"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- HERO with unique image -->
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge"><i class="fas fa-sparkle" style="margin-right: 6px;"></i> cosmic collection 2026</span>
+          <h1>Where the <br>moon meets style</h1>
+          <p>Discover limited edition lunar-inspired designs, handcrafted accessories, and cosmic home decor. Elevate your orbit.</p>
+          <button class="cta-button">Shop Now <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="hero-image">
+          <!-- Unique celestial high-quality image placeholder (unsplash but embedded inline as high-quality generated image from free source, but using a beautiful royalty-free inspired svg alternative? Actually using a stunning placeholder image from picsum? I'll use a real image link that's high-res & cosmic style - free to use demo img: but to be safe and original, I will embed a unique image placeholder via placeholder images? Better to use actual image CDN with nature/moon concept. I will use a beautiful high-res image from cloudimage mock? I'll use an official free stock image from "picsum" but to feel premium I'll use "https://picsum.photos/id/104/800/600" but that's not moon-like. Instead, I'm using a dedicated UNIQUE name and an image that feels like lunar emporium. I'll embed a high quality image from "source.unsplash.com" - moon-related. To ensure it loads and is aesthetic: moon+product vibe. -->
+          <img src="https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lunar Emporium showcase - mystical crystal and moon decor" onerror="this.src='https://picsum.photos/id/96/800/600'">
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories section with unique images -->
+    <div>
+      <h2 class="section-title">Explore realms</h2>
+      <div class="category-grid">
+        <div class="category-card">
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/1409640/pexels-photo-1409640.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Celestial jewelry" loading="lazy">
+          </div>
+          <div class="category-info">
+            <h3>Moonlit jewels</h3>
+            <p>14 unique pieces</p>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/3679590/pexels-photo-3679590.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lunar home decor" loading="lazy">
+          </div>
+          <div class="category-info">
+            <h3>Stellar home</h3>
+            <p>Cosmic accents</p>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Aura fragrances" loading="lazy">
+          </div>
+          <div class="category-info">
+            <h3>Nebula scents</h3>
+            <p>Limited blends</p>
+          </div>
+        </div>
+        <div class="category-card">
+          <div class="category-img">
+            <img src="https://images.pexels.com/photos/4503752/pexels-photo-4503752.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mystical accessories" loading="lazy">
+          </div>
+          <div class="category-info">
+            <h3>Astro accessories</h3>
+            <p>Wear the galaxy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured products (unique names) -->
+    <div>
+      <h2 class="section-title">Lunar bestsellers</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/1456735/pexels-photo-1456735.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Orb earrings">
+          </div>
+          <div class="product-title">Orbital Hoops · Silver</div>
+          <div class="price-row"><span class="price">$48</span><button class="add-to-cart"><i class="fas fa-cart-plus"></i> add</button></div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/1120952/pexels-photo-1120952.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Moon phase clock">
+          </div>
+          <div class="product-title">Moon Phase Wall Clock</div>
+          <div class="price-row"><span class="price">$89</span><button class="add-to-cart"><i class="fas fa-cart-plus"></i> add</button></div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/1115122/pexels-photo-1115122.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Nebula candle">
+          </div>
+          <div class="product-title">Nebula Glow Candle</div>
+          <div class="price-row"><span class="price">$34</span><button class="add-to-cart"><i class="fas fa-cart-plus"></i> add</button></div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="https://images.pexels.com/photos/1304510/pexels-photo-1304510.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Lunar tote bag">
+          </div>
+          <div class="product-title">Celestial Tote · Eclipse</div>
+          <div class="price-row"><span class="price">$42</span><button class="add-to-cart"><i class="fas fa-cart-plus"></i> add</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- testimonial with unique vibe & image -->
+    <div class="testimonial-section">
+      <div class="testimonial-flex">
+        <div class="testimonial-text">
+          <i class="fas fa-quote-right"></i>
+          <div class="quote">“Lunar Emporium transformed my space into a celestial sanctuary. The quality and design are out of this world.”</div>
+          <div class="customer-name">— Celeste M. / Cosmic Curator</div>
+        </div>
+        <div class="testimonial-img">
+          <img src="https://images.pexels.com/photos/5964348/pexels-photo-5964348.jpeg?auto=compress&cs=tinysrgb&w=600" alt="happy customer with lunar products" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- newsletter call to action -->
+    <div class="newsletter">
+      <h3><i class="fas fa-envelope-open-text"></i> Lunar letters</h3>
+      <p>Be the first to discover new moon drops & secret sales</p>
+      <div class="news-form">
+        <input type="email" placeholder="your cosmic email" aria-label="email">
+        <button>Subscribe ✦</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fas fa-moon"></i> Lunar Emporium</h4>
+        <p>Curated cosmic finds for modern mystics.</p>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-x-twitter"></i>
+          <i class="fab fa-pinterest"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        
+    </div>
+    <div class="copyright">
+      © 2026 Lunar Emporium — all celestial rights reserved. ✨
+    </div>
+  </div>
+</footer>
+
+<!-- tiny interactive for demo add to cart alert (non-functional but shows interactivity) -->
+<script>
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('✨ Added to your lunar cart! (demo)');
+    });
+  });
+  document.querySelector('.cta-button').addEventListener('click', () => {
+    alert('🌙 Welcome to Lunar Emporium — explore our cosmic collection');
+  });
+  document.querySelector('.news-form button').addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.querySelector('.news-form input').value;
+    if(email) alert(`🌟 Thanks for subscribing, ${email}! You'll receive lunar updates.`);
+    else alert('Please enter an email to receive celestial news.');
+  });
+</script>
+</body>
+</html>
